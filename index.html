@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music Maker</title>
+	<style type="text/css">
+		body{position: relative; background-color: black;
+		font-family: 'Noto Sans KR', sans-serif; font-weight: bold; font-size: 40px; color:lightgray;}
+		div{position: absolute;}
+		img{display: inline-block; opacity: 0; width: 15%; margin: auto; padding-bottom: 50px;}
+
+		#a{opacity: 0.3;}
+		#a:hover{opacity: 1;}
+
+		.allimg:hover{opacity: 1;}
+		.metro{width: 250px;font-size: 16px; font-weight: lighter; color: darkgray;
+			position: absolute; left: 90px; top: 300px; text-align: center;}
+		
+
+	</style>
+</head>
+<body>
+		<img src="fin1.gif" style="width: 20%; 
+		position: absolute; top:530px; left: 1200px; opacity: 0; z-index: 999" id="m">
+		<img src="fin2.gif" style="width: 20%; 
+		position: absolute; top:10px; left: 200px; opacity: 0;" id="n">
+	
+	<div class="metro">
+		<img src="metronome1.png" id="a" class="allimg" style="width: 50%; padding-bottom: 10px;">
+		<br>
+		<p id="metrotext">
+		메트로놈을 활성화시켜 <br>
+		나만의 음악을 만들어보세요.
+		</p>
+	</div>
+
+		<div style="position: absolute; top:130px;left: 430px; line-height: 220px; opacity: 0;" id="tdiv">
+			Bass<br>
+			Assistant<br>
+			Melody
+		</div>
+
+		<div style="position: absolute; top:130px; left: 280px;" align="center" id="idiv">
+			<img src="bassguitar1.gif" class="allimg" id="b">
+			<img src="beat.gif" class="allimg" id="d">
+			<img src="elecpiano.gif" class="allimg" id="e">
+		<br>
+			
+			<img src="guitar1.gif" class="allimg" id="f">
+			<img src="shaker.gif" class="allimg" id="j">
+			<img src="saxo.gif" class="allimg" id="h">
+		<br>
+			
+			<img src="piano.gif" class="allimg" id="i">
+			<img src="guitar2.gif" class="allimg" id="g">
+			<img src="synth1.gif" class="allimg" id="l">
+		</div>
+
+	<audio src="metronome.mp4" loop id="aa"></audio>
+	<audio src="bassguitar1.mp3" loop id="bb"></audio>
+	<audio src="beat.mp3" loop id="dd"></audio>
+	<audio src="elecpiano.mp3" loop id="ee"></audio>
+	<audio src="guitar1.mp3" loop id="ff"></audio>
+	<audio src="guitar2.mp3" loop id="gg"></audio>
+	<audio src="saxo.mp3" loop id="hh"></audio>
+	<audio src="piano.mp3" loop id="ii"></audio>
+	<audio src="shaker.mp3" loop id="jj"></audio>
+	<audio src="synth1.mp3" loop id="ll"></audio>
+
+	<script type="text/javascript">
+		
+		var astate = "off"
+		a.onclick = function(){
+			if(astate == "off"){
+				a.style.opacity = "1";
+				a.src = "metronome.gif";
+				aa.play();
+				astate = "on";
+				aa.volume = "0.3";
+				tdiv.style.opacity = "1";
+				b.style.opacity = "0.3";
+				d.style.opacity = "0.3";
+				e.style.opacity = "0.3";
+				f.style.opacity = "0.3";
+				g.style.opacity = "0.3";
+				h.style.opacity = "0.3";
+				i.style.opacity = "0.3";
+				j.style.opacity = "0.3";
+				l.style.opacity = "0.3";
+				metrotext.innerHTML = "다 만들었다면 꺼서 확인해보세요.";
+			}else{
+				a.style.opacity = "0.3";
+				aa.pause();
+				astate = "off";
+				metrotext.innerHTML = "";
+				a.src = "metronome1.png"
+				m.style.opacity = "1";
+				n.style.opacity = "1";
+			}
+		}
+
+		var bstate = "off"
+		b.onclick = function(){
+			if(bstate == "off"){
+				b.style.opacity = "1";
+				bb.play();
+				bstate = "on";
+				bb.volume = "0.5";
+			}else{
+				b.style.opacity = "0.3";
+				bb.pause();
+				bstate = "off";
+			}
+		}
+
+		var dstate = "off"
+		d.onclick = function(){
+			if(dstate == "off"){
+				d.style.opacity = "1";
+				dd.play();
+				dstate = "on";
+				dd.volume = "0.5";
+			}else{
+				d.style.opacity = "0.3";
+				dd.pause();
+				dstate = "off";
+			}
+		}
+
+		var estate = "off"
+		e.onclick = function(){
+			if(estate == "off"){
+				e.style.opacity = "1";
+				ee.play();
+				estate = "on";
+				ee.volume = "0.5";
+			}else{
+				e.style.opacity = "0.3";
+				ee.pause();
+				estate = "off";
+			}
+		}
+
+		var fstate = "off"
+		f.onclick = function(){
+			if(fstate == "off"){
+				f.style.opacity = "1";
+				ff.play();
+				fstate = "on";
+				ff.volume = "0.5";
+			}else{
+				f.style.opacity = "0.3";
+				ff.pause();
+				fstate = "off";
+			}
+		}
+
+		var gstate = "off"
+		g.onclick = function(){
+			if(gstate == "off"){
+				g.style.opacity = "1";
+				gg.play();
+				gstate = "on";
+				gg.volume = "0.5";
+			}else{
+				g.style.opacity = "0.3";
+				gg.pause();
+				gstate = "off";
+			}
+		}
+
+		var hstate = "off"
+		h.onclick = function(){
+			if(hstate == "off"){
+				h.style.opacity = "1";
+				hh.play();
+				hstate = "on";
+				hh.volume = "0.3";
+			}else{
+				h.style.opacity = "0.3";
+				hh.pause();
+				hstate = "off";
+			}
+		}
+
+		var istate = "off"
+		i.onclick = function(){
+			if(istate == "off"){
+				i.style.opacity = "1";
+				ii.play();
+				istate = "on";
+				ii.volume = "0.5";
+			}else{
+				i.style.opacity = "0.3";
+				ii.pause();
+				istate = "off";
+			}
+		}
+
+		var jstate = "off"
+		j.onclick = function(){
+			if(jstate == "off"){
+				j.style.opacity = "1";
+				jj.play();
+				jstate = "on";
+				jj.volume = "0.5";
+			}else{
+				j.style.opacity = "0.3";
+				jj.pause();
+				jstate = "off";
+			}
+		}
+
+		var lstate = "off"
+		l.onclick = function(){
+			if(lstate == "off"){
+				l.style.opacity = "1";
+				ll.play();
+				lstate = "on";
+				ll.volume = "0.3";
+			}else{
+				l.style.opacity = "0.3";
+				ll.pause();
+				lstate = "off";
+			}
+		}
+	</script>
+</body>
+<footer align="center"  style=" position: absolute; font-size: 10px; font-weight: lighter; top:880px;left: 700px;" >
+	Copyrightⓒ2019 moonkyunga All rights reserved.
+</footer>
+</html>
